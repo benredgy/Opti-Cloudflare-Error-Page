@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Foods | Application Error Page</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5BBL8BG');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-brand-primary: #007Bc7;
+            --color-brand-primary-light: #1b7fcc;
+            --color-text-dark: #3f3f3f;
+            --color-bg-white: #ffffff;
+            --color-bg-gray-light: #f3f3f3;
+        }
+        body {
+            font-family: "Open Sans", serif;
+            background-color: var(--color-bg-white);
+            margin: 0;
+            padding: 0;
+        }
+        header img {
+            max-width: 60px;
+            margin-bottom: 1rem;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            max-width: 600px;
+            padding: 1.25rem;
+        }
+        h1 {
+            font-family: "Merriweather", serif;
+            font-size: 1.9375rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--color-text-dark);
+        }
+        p {
+            font-size: 1rem;
+            color: var(--color-text-dark);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        a {
+            color: var(--color-brand-primary);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: .75rem;
+        }
+        a:hover {
+            color: var(--color-brand-primary-light);
+        }
+        footer {
+            width: 100%;
+            background-color: var(--color-bg-gray-light);
+            padding: .25rem 0;
+        }
+        footer p {
+            padding: .625rem 1.25rem;
+            font-size: 0.75rem;
+            margin: 0;
+        }
+        #tech-details {
+            display: none;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            background: #f3f3f3;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+		button.toggle-details {
+			font-size: 0.75rem;
+			text-transform: uppercase;
+			background: none;
+			border: none;
+			color: var(--color-brand-primary);
+			font-weight: 700;
+			font-family: "Open Sans", serif;
+			cursor: pointer;
+			padding: 0;
+			line-height: 1.3;
+		}
+        button.toggle-details:hover {
+            color: var(--color-brand-primary-light);
+        }
+        @media (max-width: 600px) {
+            .wrapper {
+                padding: 1.8125rem;
+            }
+            footer p {
+                padding: .625rem 1.8125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BBL8BG"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container error-page">
+        <div id="wrapperContent" class="wrapper">
+            <header id="headerContent">
+                <img src="https://downloads.intercomcdn.com/i/o/374672/56661e624dbf29a5bd951d0f/0c1b4fe6f4383cd8ec1939888c9688b4.png" alt="Dot Foods Logo" />
+            </header>
+            <main id="mainContent">
+                <h1 class="heading">We didn't want you to see us like this...</h1>
+                <div id="cloudFlareMessage">
+					<!-- leave this blank so there’s no message flicker -->
+                </div>
+
+                <!-- Collapsible diagnostic details -->
+                <button class="toggle-details" id="toggleDetails">Click to see technical details</button>
+                <div id="tech-details">
+                    ::CLOUDFLARE_ERROR_500S_BOX::
+                </div>
+            </main>
+        </div>
+        <footer id="footerContent">
+            <p>© 1995-{0} Dot Foods, Inc.® All Rights Reserved.</p>
+        </footer>
+    </div>
+
+	<script type="text/javascript">
+	  document.addEventListener('DOMContentLoaded', function () {
+		const currentYear = new Date().getFullYear();
+		document.querySelector('footer p').innerText =
+		  document.querySelector('footer p').innerText.replace('{0}', currentYear);
+
+		const button = document.getElementById('toggleDetails');
+		const details = document.getElementById('tech-details');
+
+		if (button && details) {
+		  button.addEventListener('click', function (event) {
+			event.preventDefault();
+			const isHidden = details.style.display === 'none';
+			details.style.display = isHidden ? 'block' : 'none';
+			button.innerText = isHidden ? 'Hide technical details' : 'Click to see technical details';
+		  });
+		}
+	  });
+	</script>
+</body>
+</html>
